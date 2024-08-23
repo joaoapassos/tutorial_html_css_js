@@ -4,11 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index Context</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            padding: 50px;
+
+            & main{
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                & li{
+                    margin: 0 0 10px 0;
+                }
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Index Context</h1>
-    <a href="./Aula 1/estrutura_base.html">Estrutura base</a>
-    <a href="./Aula 2/aula_2.html">Aula 2 - Css interno, externo e git/github</a>
-    <a href="./Aula 3/aula_3.html">Aula 3 - Layouts(divs e flexbox)</a>
+    <main>
+        <ol>
+            <li><a href="./Aula 1/estrutura_base.html">Estrutura base</a></li>
+            <li><a href="./Aula 2/aula_2.html">Aula 2 - Css interno, externo e git/github</a></li>
+            <li><a href="./Aula 3/aula_3.html">Aula 3 - Layouts(divs e flexbox)</a></li>
+            <li><a href="./Aula 4/aula_4.html">Aula 4 - Tutorial FlexBox</a></li>
+        </ol>
+    </main>
 </body>
 </html>
