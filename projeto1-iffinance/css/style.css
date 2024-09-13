@@ -1,24 +1,25 @@
 html, body{
     margin: 0;
     padding: 0;
-    font-family: Helvetica, sans-serif; /* Paramos aqui */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 body{
-    background-color: #111111;
+    background: #1c1c1c;
 }
 
-header{
+header {
     height: 90px;
-    background: black;
+    background: #000;
 }
-.wrapper{
-    max-width: 1000px;
+
+.wrapper {
+    width: 1000px;
     margin: 0 auto;
 }
+
 header .wrapper{
     display: flex;
-    flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
     height: 100%;
@@ -26,14 +27,52 @@ header .wrapper{
 
 #logo{
     width: 150px;
-    /* height: 50px; */
 }
+
+#logo a{
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+}
+
 #logo h1{
     margin: 0;
-    color: white;
+    color: #FFF;
 }
-nav{
-    width: 450px;
-    height: 50px;
-    background: gray;
+
+#logo h1 span{
+    color: #F19E39;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    color: #FFF;
+    font-size: 18px;
+}
+
+header nav ul li a{
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+    padding: 30px 20px;
+}
+
+header nav ul li a:hover{
+    color: #cdcdcd;
+    border-bottom: 5px solid #ae7026c7;
+}
+
+.active {
+    border-bottom: 5px solid #F19E39;
+}
+
+.active:hover {
+    border-bottom: 5px solid #F19E39;
+}
+
+
+main{
+    color: #FFF;
 }
