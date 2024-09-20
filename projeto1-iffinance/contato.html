@@ -29,6 +29,63 @@
         <main>
             <div class="wrapper">
                 <h1>Contatos</h1>
+
+                <form>
+                    <fieldset>
+                        <legend>Dados Pessoais</legend>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha">
+
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Preferêcias</legend>
+
+                        <p>Em qual bolsa vc investe?</p>
+
+                        <div>
+                            <input type="radio" name="bolsa" id="ibovespa" value="ibovespa">
+                            <label for="ibovespa">Ibovespa</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="bolsa" id="nasdaq" value="nasdaq">
+                            <label for="nasdaq">Nasdaq</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="bolsa" id="nyse" value="nyse">
+                            <label for="nyse">Nyse</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="news" id="newletter">
+                            <label for="newletter">Deseja receber nossos informativos?</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="terms" id="terms">
+                            <label for="terms">Aceita nossos termos</label>
+                        </div>
+
+                    </fieldset>
+                    
+
+                    <label for="estados">Qual seu Estado?</label>
+                    <select name="estados" id="estados">
+                        <option>São paulo</option>
+                        <option>Rio de Janeiro</option>
+                        <option>Minas Gerais</option>
+                    </select>
+
+                    <label for="comentario">Digite seu comentario</label>
+                    <textarea name="comentario" id="comentario"></textarea>
+
+                    <input type="submit" value="Enviar">
+                    
+                </form>
+            
             </div>
         </main>
     </body>
