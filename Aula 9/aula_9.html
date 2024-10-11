@@ -55,7 +55,7 @@
 
         // console.log(user.nomeCompleto)
 
-        console.log("Teste de objetos 2");
+        console.log("Teste de objetos");
 
         const user = {
             id: 0,
@@ -71,11 +71,11 @@
                 personal: "(99) 9999-9999"
             },
             nomeCompleto: () => {
-                console.log(`${this.nome} ${this.sobreNome}`)
+                return `${this.nome} ${this.sobreNome}`
             }
         }
 
-       user.nomeCompleto()
+       console.log(user.nomeCompleto());
 
     </script>
 </body>
