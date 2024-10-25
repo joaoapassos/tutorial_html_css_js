@@ -29,7 +29,49 @@
         <main>
             <div class="wrapper">
                 <h1>Home</h1>
+
+                <input type="text" id="txtInput">
+
+                <button onclick="pegarTexto()">Pegar Texto</button>
+                <button onclick="mudar()">Mudar Cor Logo</button>
+
+                <div id="resultado"></div>
             </div>
         </main>
     </body>
+    
+    <script>
+        // const logo = document.getElementById('logo');
+        // logo.innerHTML += `<p>Novo paragrafo</p>`
+        // logo.style.backgroundColor = "#fff"
+        // console.log(logo);
+
+        let valor = 10
+        valor += 5
+        console.log(valor)
+
+        let corAtual = 'preto'
+
+        const mudar = () => {
+            const logo = document.getElementById('logo')
+
+            if(corAtual == 'preto'){
+                logo.style.background = "#FFF"
+                corAtual = 'branco'
+            } else {
+                logo.style.background = "#000"
+                corAtual = 'preto'
+            }
+             //logo.innerHTML += '<p>Novo Logo<p>'
+            console.log('Clicado...')
+        }
+
+        function pegarTexto () {
+            const txtInput = document.getElementById('txtInput')
+            const resultado = document.getElementById('resultado')
+
+            resultado.innerHTML = `<p>${txtInput.value}</p>`
+        }
+
+    </script>
 </html>

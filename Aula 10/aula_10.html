@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="João Alves Passos">
+    <meta name="keywords" content="html, css, js, javascript, dom">
+    <meta name="description" content="Aula 10 - JavaScript (Funções,...)">
+    <title>Aula 10 - JavaScript (Funções,...)</title>
+
+    <style>
+
+        #background{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border: 1px solid black;
+        }
+        body{
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Aula 10 - JavaScript (Funções,...)</h1>
+
+    <h2>Exercicio 1</h2>
+    <input id="inputColor" type="color" onchange="receberCor()">
+    <input id="hexCor" type="text">
+    <button id="atrCor" onclick="mudarCor()">Aperte</button>
+    <div id="background"></div>
+
+    <h2>Exercicio 2</h2>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <button id="btn+" onclick="calculadora('+')">+</button>
+    <button id="btn-" onclick="calculadora('-')">-</button>
+    <input type="number" id="res">
+
+    <script>
+
+        console.log("Mexendo com funções");
+
+        // const parametro1 = "A";
+        // const parametro2 = "B";
+
+        // function nomeDaFuncao(parametro1, parametro2){
+
+        //     return (`${parametro1} ${parametro2}`)
+        // }
+
+        // console.log(nomeDaFuncao(parametro1, parametro2))
+
+        // const novaFuncao = function(parametro1, parametro2){
+
+        //     return `${parametro1} ${parametro2}`;
+        // }
+
+        // console.log(novaFuncao(parametro1, parametro2))
+
+        // const arrowFunction = (parametro1, parametro2) => {
+
+        //     return `${parametro1} ${parametro2}`;
+        // }
+
+        // console.log(arrowFunction(parametro1, parametro2))
+
+        // const user = {
+        //     nome: "João",
+        //     sobreNome: "Alves Passos",
+        //     id: 0,
+        //     nomeCompleto: (nome, sobreNome) =>{
+        //         return `${nome} ${sobreNome}`;
+        //     },
+        //     idade: 18
+        // }
+        // const teste = user.nomeCompleto
+
+        // console.log(teste(user.nome, user.sobreNome))
+
+        const btn = document.getElementById('atrCor');
+        const input = document.getElementById('hexCor');
+        const inputColor = document.getElementById('inputColor')
+        const back = document.getElementById('background');
+        const res = document.getElementById('res');
+        const num1 = document.getElementById('num1');
+        const num2 = document.getElementById('num2');
+
+        function receberCor(){
+            input.value = inputColor.value;
+        }
+
+        function mudarCor(){
+            back.style.backgroundColor = `${input.value}`
+        }
+
+        function calculadora(op){
+            if(op == '+'){
+                res.value = +num1.value + +num2.value; 
+            }
+            else{
+                res.value = parseInt(num1.value) - parseInt(num2.value);
+            }
+        }
+
+        function criarPaleta(){
+            
+        }
+
+    </script>
+</body>
+</html>
