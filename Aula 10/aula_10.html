@@ -10,33 +10,87 @@
 
     <style>
 
-        #background{
-            width: 100px;
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        div{
+            width: 600px;
+            margin-bottom: 50px;
+        }
+
+        #background, #background2{
+            width: 602px;
             height: 100px;
             background-color: white;
             border: 1px solid black;
+            margin: 10px 0;
+        }
+        #paleta{
+            width: 602px;
+            min-height: 100px;
+            background-color: white;
+            border: 1px solid black;
+            margin: 10px 0;
+            display: flex;
+            flex-flow: row wrap;
         }
         body{
-            padding: 20px;
+            width: 100%;
+            padding: 50px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+        }
+
+        .btn{
+            width: 100px;
+            height: 100px;
+            /* background-color: white; */
+            border: none;
+            cursor: pointer;
+        }
+        h1{
+            margin-bottom: 50px;
         }
 
     </style>
 </head>
 <body>
     <h1>Aula 10 - JavaScript (Funções,...)</h1>
+    <div>
+        <h2>Exercicio 1: Troca de cor</h2>
+        <input id="inputColor" type="color" onchange="receberCor()">
+        <input id="hexCor" type="text">
+        <button id="atrCor" onclick="mudarCor()">Aperte</button>
+        <div id="background"></div>
+    </div>
 
-    <h2>Exercicio 1</h2>
-    <input id="inputColor" type="color" onchange="receberCor()">
-    <input id="hexCor" type="text">
-    <button id="atrCor" onclick="mudarCor()">Aperte</button>
-    <div id="background"></div>
+    <div>
+        <h2>Exercicio 2: Calculadora Simples</h2>
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        <button id="btn+" onclick="calculadora('+')">+</button>
+        <button id="btn-" onclick="calculadora('-')">-</button>
+        <input type="number" id="res">
+    </div>
 
-    <h2>Exercicio 2</h2>
-    <input type="number" id="num1">
-    <input type="number" id="num2">
-    <button id="btn+" onclick="calculadora('+')">+</button>
-    <button id="btn-" onclick="calculadora('-')">-</button>
-    <input type="number" id="res">
+
+    <div>
+        <h2>Desafio 1: Paleta + Troca de cor</h2>
+        <input id="inputColor2" type="color" onchange="receberCor2()">
+        <input id="hexCor2" type="text">
+        <button id="atrCor2" onclick="criarPaleta()">Aperte</button>
+        <button id="limpCor" onclick="limparPaleta()">Limpar</button>
+        <div id="paleta">
+            <!-- <button class="btn" onclick=""></button> -->
+        </div>
+        <div id="background2"></div>
+    </div>
 
     <script>
 
@@ -82,10 +136,15 @@
         const btn = document.getElementById('atrCor');
         const input = document.getElementById('hexCor');
         const inputColor = document.getElementById('inputColor')
+        const input2 = document.getElementById('hexCor2');
+        const inputColor2 = document.getElementById('inputColor2')
         const back = document.getElementById('background');
+        const back2 = document.getElementById('background2');
         const res = document.getElementById('res');
         const num1 = document.getElementById('num1');
         const num2 = document.getElementById('num2');
+        const paleta = document.getElementById('paleta');
+        let idPaleta = 0;
 
         function receberCor(){
             input.value = inputColor.value;
@@ -105,7 +164,32 @@
         }
 
         function criarPaleta(){
-            
+            idPaleta++;
+            const newColor = document.createElement('button');
+            newColor.classList.add('btn');
+            newColor.setAttribute('data-id', `paleta_${idPaleta}`);
+            // console.log(newColor);
+            newColor.style.backgroundColor = input2.value;
+            paleta.append(newColor);
+            // newColor.onclick = mudarCor2(this);
+            // newColor.addEventListener('click', mudarCor2())
+            mudarCor2(newColor);
+        }
+        function receberCor2(){
+            input2.value = inputColor2.value;
+        }
+
+        function mudarCor2(btn){
+            //const cor = document.getElementById(btn);
+            btn.addEventListener('click', function(){                
+                // console.log(btn);;
+                back2.style.backgroundColor = btn.style.backgroundColor;
+            })
+        }
+        function limparPaleta(){
+            paleta.innerHTML = '';
+            input2.value = '';
+            back2.style.backgroundColor = "#fff";
         }
 
     </script>
