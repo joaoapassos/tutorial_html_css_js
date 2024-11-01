@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="João Alves Passos">
     <meta name="keywords" content="html, css, js, javascript, dom">
-    <meta name="description" content="Aula 10 - JavaScript (Funções,...)">
-    <title>Aula 10 - JavaScript (Funções,...)</title>
+    <meta name="description" content="Aula 11 - JavaScript (Continuação - Funções,...)">
+    <title>Aula 11 - JavaScript (Continuação - Funções,...)</title>
 
     <style>
 
@@ -61,7 +61,7 @@
     </style>
 </head>
 <body>
-    <h1>Aula 10 - JavaScript (Funções,...)</h1>
+    <h1>Aula 11 - JavaScript (Continuação - Funções,...)</h1>
     <div>
         <h2>Exercicio 1: Troca de cor</h2>
         <input id="inputColor" type="color" onchange="receberCor()">
@@ -76,6 +76,8 @@
         <input type="number" id="num2">
         <button id="btn+" onclick="calculadora('+')">+</button>
         <button id="btn-" onclick="calculadora('-')">-</button>
+        <button id="btn-" onclick="calculadora('*')">*</button>
+        <button id="btn-" onclick="calculadora('/')">/</button>
         <input type="number" id="res">
     </div>
 
@@ -95,43 +97,6 @@
     <script>
 
         console.log("Mexendo com funções");
-
-        // const parametro1 = "A";
-        // const parametro2 = "B";
-
-        // function nomeDaFuncao(parametro1, parametro2){
-
-        //     return (`${parametro1} ${parametro2}`)
-        // }
-
-        // console.log(nomeDaFuncao(parametro1, parametro2))
-
-        // const novaFuncao = function(parametro1, parametro2){
-
-        //     return `${parametro1} ${parametro2}`;
-        // }
-
-        // console.log(novaFuncao(parametro1, parametro2))
-
-        // const arrowFunction = (parametro1, parametro2) => {
-
-        //     return `${parametro1} ${parametro2}`;
-        // }
-
-        // console.log(arrowFunction(parametro1, parametro2))
-
-        // const user = {
-        //     nome: "João",
-        //     sobreNome: "Alves Passos",
-        //     id: 0,
-        //     nomeCompleto: (nome, sobreNome) =>{
-        //         return `${nome} ${sobreNome}`;
-        //     },
-        //     idade: 18
-        // }
-        // const teste = user.nomeCompleto
-
-        // console.log(teste(user.nome, user.sobreNome))
 
         const btn = document.getElementById('atrCor');
         const input = document.getElementById('hexCor');
@@ -155,11 +120,19 @@
         }
 
         function calculadora(op){
-            if(op == '+'){
-                res.value = +num1.value + +num2.value; 
-            }
-            else{
-                res.value = parseInt(num1.value) - parseInt(num2.value);
+            // if(op === '+'){
+            //     res.value = (+num1.value) + (+num2.value); 
+            // }
+            // else{
+            //     res.value = parseInt(num1.value) - parseInt(num2.value);
+            // }
+
+            switch (op){
+                case '+': res.value = (+num1.value) + (+num2.value); break;
+                case '-': res.value = (+num1.value) - (+num2.value); break;
+                case '*': res.value = (+num1.value) * (+num2.value); break;
+                case '/': res.value = (+num1.value) / (+num2.value); break;
+                default:  console.log("Operação inválida");
             }
         }
 
@@ -167,24 +140,25 @@
             idPaleta++;
             const newColor = document.createElement('button');
             newColor.classList.add('btn');
-            newColor.setAttribute('data-id', `paleta_${idPaleta}`);
-            // console.log(newColor);
+            newColor.setAttribute('id', `paleta_${idPaleta}`);
             newColor.style.backgroundColor = input2.value;
-            paleta.append(newColor);
-            // newColor.onclick = mudarCor2(this);
-            // newColor.addEventListener('click', mudarCor2())
+            paleta.append(newColor);            
             mudarCor2(newColor);
+
+            // paleta.innerHTML +=  `<button class="btn" id="paleta_${idPaleta}" style="background-color:  ${input2.value};"  onclick="mudarCor2(this)"></button>`;   
+
         }
         function receberCor2(){
             input2.value = inputColor2.value;
         }
 
         function mudarCor2(btn){
-            //const cor = document.getElementById(btn);
+            const cor = document.getElementById(btn);
             btn.addEventListener('click', function(){                
                 // console.log(btn);;
                 back2.style.backgroundColor = btn.style.backgroundColor;
             })
+            // back2.style.backgroundColor = btn.style.backgroundColor;
         }
         function limparPaleta(){
             paleta.innerHTML = '';
