@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="João Alves Passos">
+    <meta name="keywords" content="Lego, Atividade, JS, ADS, João Alves Passos">
+    <meta name="description" content="Atividade: Montar Lego usando querySelector">
+    <title>Atividade: Montar Lego</title>
+    <link rel="shortcut icon" href="./imgs/lego-logotype.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <a href="./">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg version="1.1" viewBox="0 0 26 26" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" title="Logo Lego">
+                <g><path d="m21.677 9.896c-0.208 0-0.415 0.042-0.582 0.295-0.416 0.547-1.578 3.749-1.537 4.38 0 0.212 0.125 0.421 0.416 0.421s0.498-0.209 0.664-0.506c0.334-0.588 1.372-3.453 1.412-4.169 0-0.169-0.04-0.421-0.373-0.421z"/><path d="m20.904 0h-15.808c-2.803 0-5.096 2.293-5.096 5.094v15.813c0 2.8 2.293 5.093 5.096 5.093h15.809c2.802 0 5.095-2.293 5.095-5.094v-15.812c0-2.801-2.293-5.094-5.096-5.094zm-17.505 16.972c-0.789 0-1.495-0.379-1.495-1.305-0.041-1.644 1.577-5.435 2.368-6.656 0.373-0.59 0.789-0.885 1.494-0.885 0.666 0 0.832 0.338 0.789 0.717 0 1.095-1.743 4.423-2.325 5.728 1.37-0.211 1.703 0.253 1.66 0.759-0.123 1.39-1.37 1.684-2.491 1.642zm5.276-3.664c-0.082 0.253-0.249 0.759-0.374 1.307 0.458-0.085 0.789-0.169 1.37-0.169 0.625 0 1.081 0.294 1.081 0.842 0 1.349-1.496 1.727-2.492 1.727-1.122 0-2.077-0.631-2.077-1.853 0-1.475 0.747-3.665 1.495-5.098 0.872-1.811 1.787-2.064 3.364-2.064 0.666 0 1.496 0.338 1.496 0.97 0 0.927-0.79 1.264-1.536 1.306-0.333 0.042-0.832 0.042-1.123 0.042 0 0-0.248 0.379-0.497 1.053 1.37-0.168 1.993 0.127 1.743 0.97-0.332 1.093-1.287 1.177-2.45 0.967zm8.473 0.126c-0.416 1.979-1.785 3.58-3.779 3.58-1.371 0-2.201-0.758-2.201-2.148 0-1.01 0.498-2.568 0.871-3.496 0.832-1.937 1.704-3.326 3.903-3.326 1.332 0 2.37 0.505 2.203 1.77-0.124 0.925-0.581 1.431-1.37 1.515-0.25 0-1.204 0-0.872-0.926 0.083-0.295 0.166-0.549-0.332-0.549-0.375 0-0.623 0.254-0.79 0.507-0.416 0.59-1.288 2.906-1.412 3.832-0.125 0.674 0.165 0.8 0.457 0.8 0.498 0 1.038-0.546 1.246-1.39 0 0-0.955-0.041-0.707-0.842 0.25-0.842 0.748-1.011 1.538-1.053 1.536-0.043 1.371 1.094 1.245 1.726zm6.771-1.938c-0.249 1.18-0.789 2.57-1.327 3.58-0.957 1.727-2.078 1.938-3.034 1.938-0.997 0-2.118-0.378-2.118-1.938 0-1.095 0.457-2.652 0.873-3.664 0.705-1.854 1.411-3.369 3.653-3.327 2.618 0 2.161 2.399 1.953 3.411z"/></g>
+            </svg>
+        </a>
+        <h1>Montar Lego</h1>
+    </header>
+    <main>
+        <section id="sectionMontar" class="sectionMontar">
+            <form id="formAddImagem">
+                <h2>Imagem:</h2>
+
+                <input type="url" id="url" name="url" placeholder="URL:">
+                
+                <select name="tipoImagem" id="tipoImagem">
+                    <option value="cabeca" selected>Cabeça</option>
+                    <option value="tronco">Tronco</option>
+                    <option value="pernas">Pernas</option>
+                </select>
+
+                <button type="submit" id="btnAddImagem">Add</button>
+            </form>
+
+            <section class="containerGrupImagens">
+                <section id="grupCabeca" class="grupCabeca">
+                    <h3>Cabeça</h3>
+                    <!-- <button class="imgsContainer">
+                        <img src="./imgs/head.jpg" alt="cabeca_1" id="cabeca_1" title="cabeca_1">
+                    </button> -->
+                </section>
+                <section id="grupTronco" class="grupTronco">
+                    <h3>Tronco</h3>
+                    <!-- <button class="imgsContainer">
+                        <img src="./imgs/body.jpg" alt="tronco_1" id="tronco_1">
+                    </button> -->
+                </section>
+                <section id="grupPernas" class="grupPernas">
+                    <h3>Pernas</h3>
+                    <!-- <button class="imgsContainer">
+                        <img src="./imgs/legs.jpg" alt="pernas_1" id="pernas_1">
+                    </button> -->
+                </section>
+            </section>
+        </section>
+
+        <section id="sectionLego" class="sectionLego">
+            <div class="avatar">
+                <button id="resetAvatar" onclick="resetarAvatar()">Reset</button>
+                <div class="avatarCabeca">
+                    <div class="imgs">
+                        <img src="./imgs/head.jpg" alt="Imagem de Cabeça Padrão" id="avatarCabecaImg" title="Imagem de Cabeça Padrão">
+                    </div>
+                </div>
+                <div class="avatarTronco">
+                    <div class="imgs">
+                        <img src="./imgs/body.jpg" alt="Imagem de Tronco Padrão" id="avatarTroncoImg" title="Imagem de Tronco Padrão">
+                    </div>
+                </div>
+                <div class="avatarPernas">
+                    <div class="imgs">
+                        <img src="./imgs/legs.jpg" alt="Imagem de Pernas Padrão" id="avatarPernasImg" title="Imagem de Pernas Padrão">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy 2024 - João Alves Passos</p>
+    </footer>
+
+    <script src="./app.js"></script>
+</body>
+</html>
