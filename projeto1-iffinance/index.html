@@ -28,16 +28,51 @@
         </header>
         <main>
             <div class="wrapper">
-                <h1>Home</h1>
+                <div class="flex-bt">
+                    <h1>Home</h1>
+                    <button onclick="abrirModal()">Adicionar</button>
+                </div>
 
-                <input type="text" id="txtInput">
-
-                <button onclick="pegarTexto()">Pegar Texto</button>
-                <button onclick="mudar()">Mudar Cor Logo</button>
-
-                <div id="resultado"></div>
+                <div class="card-list" id="card-list">
+                    <!-- <div class="card-ticker">
+                        <header>
+                            <img src="https://t3.ftcdn.net/jpg/02/94/22/52/360_F_294225253_YiGjFQNJfEHvd8jpGAZJJSNGSfBnZxMy.jpg" alt="Apple Logo">
+                            <h4>Apple</h4>
+                            <span>AAPL</span>
+                        </header>
+                        <main>
+                            <p>Valor: <span style="color: rgb(36, 209, 88)">R$ 100,00 ▲▼</span></p>
+                        </main>
+                        <footer>
+                            <p>QTD: <span>20</span></p>
+                            <p>Posição: <span>R$ 23.434,24</span></p>
+                        </footer>
+                    </div> -->
+                </div>
             </div>
         </main>
+
+        <div class="modal" id="modal_1" onclick="fecharModal(event)">
+            <main>
+                <header>
+                    <h1>Adicionar Ação</h1>
+                    <button id="xbtn" onclick="fecharModal()">X</button>
+                </header>
+                <form class="formAddAcao" onsubmit="handleSubmitAddTicket(event)">
+                    <label for="urlLogo">URL: Logo</label>
+                    <input type="text" name="urlLogo" id="urlLogo">
+                    <label for="nameCompany">Nome da empresa:</label>
+                    <input type="text" name="nameCompany" id="nameCompany">
+                    <label for="ticker">Símbolo</label>
+                    <input type="text" name="ticker" id="ticker">
+                    <label for="quantity">Quantidade</label>
+                    <input type="number" name="quantity" id="quantity">
+                    <label for="closeValue">Valor da Ação: </label>
+                    <input type="number" name="closeValue" id="closeValue">
+                    <button type="submit">Adicionar Ação</button>
+                </form>
+            </main>
+        </div>
     </body>
     
     <script>
@@ -46,32 +81,33 @@
         // logo.style.backgroundColor = "#fff"
         // console.log(logo);
 
-        let valor = 10
-        valor += 5
-        console.log(valor)
+        // let valor = 10
+        // valor += 5
+        // console.log(valor)
 
-        let corAtual = 'preto'
+        // let corAtual = 'preto'
 
-        const mudar = () => {
-            const logo = document.getElementById('logo')
+        // const mudar = () => {
+        //     const logo = document.getElementById('logo')
 
-            if(corAtual == 'preto'){
-                logo.style.background = "#FFF"
-                corAtual = 'branco'
-            } else {
-                logo.style.background = "#000"
-                corAtual = 'preto'
-            }
-             //logo.innerHTML += '<p>Novo Logo<p>'
-            console.log('Clicado...')
-        }
+        //     if(corAtual == 'preto'){
+        //         logo.style.background = "#FFF"
+        //         corAtual = 'branco'
+        //     } else {
+        //         logo.style.background = "#000"
+        //         corAtual = 'preto'
+        //     }
+        //      //logo.innerHTML += '<p>Novo Logo<p>'
+        //     console.log('Clicado...')
+        // }
 
-        function pegarTexto () {
-            const txtInput = document.getElementById('txtInput')
-            const resultado = document.getElementById('resultado')
+        // function pegarTexto () {
+        //     const txtInput = document.getElementById('txtInput')
+        //     const resultado = document.getElementById('resultado')
 
-            resultado.innerHTML = `<p>${txtInput.value}</p>`
-        }
+        //     resultado.innerHTML = `<p>${txtInput.value}</p>`
+        // }
 
     </script>
+    <script src="./js/main.js"></script>
 </html>

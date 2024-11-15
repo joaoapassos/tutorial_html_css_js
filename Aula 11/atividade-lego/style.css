@@ -159,7 +159,7 @@ main{
                     max-width: 100%;
                 }
                 & #avatarCabecaImg{
-                    max-width: 30%;
+                    max-width: 50%;
                 }
                 & #avatarTroncoImg, & #avatarPernasImg{
                     max-width: 100%;
