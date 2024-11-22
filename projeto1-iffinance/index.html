@@ -30,11 +30,11 @@
             <div class="wrapper">
                 <div class="flex-bt">
                     <h1>Home</h1>
-                    <button onclick="abrirModal()">Adicionar</button>
+                    <button onclick="abrirModal('#addTicket')">Adicionar</button>
                 </div>
 
                 <div class="card-list" id="card-list">
-                    <!-- <div class="card-ticker">
+                    <div class="card-ticker" onmouseenter="showCardOptions(event)" onmouseleave="closeCardOptions(event)">
                         <header>
                             <img src="https://t3.ftcdn.net/jpg/02/94/22/52/360_F_294225253_YiGjFQNJfEHvd8jpGAZJJSNGSfBnZxMy.jpg" alt="Apple Logo">
                             <h4>Apple</h4>
@@ -47,18 +47,29 @@
                             <p>QTD: <span>20</span></p>
                             <p>Posição: <span>R$ 23.434,24</span></p>
                         </footer>
-                    </div> -->
+
+                        <div class="card-options">
+                            <button class="card-btn-edit" onclick="editTicker(event)">
+                                <image><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg></image>
+                            </button>
+
+                            <button class="card-btn-delete" onclick="deleteCard(event)">
+                                <image><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></image>
+                            </button>
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
 
-        <div class="modal" id="modal_1" onclick="fecharModal(event)">
+        <div class="modal" id="addTicket" onclick="fecharModal('#addTicket', event)">
             <main>
                 <header>
                     <h1>Adicionar Ação</h1>
-                    <button id="xbtn" onclick="fecharModal()">X</button>
+                    <button id="xbtn" onclick="fecharModal('#addTicket')">X</button>
                 </header>
-                <form class="formAddAcao" onsubmit="handleSubmitAddTicket(event)">
+                <form class="formAddAcao" onsubmit="addTicket(event)">
                     <label for="urlLogo">URL: Logo</label>
                     <input type="text" name="urlLogo" id="urlLogo">
                     <label for="nameCompany">Nome da empresa:</label>
@@ -69,6 +80,28 @@
                     <input type="number" name="quantity" id="quantity">
                     <label for="closeValue">Valor da Ação: </label>
                     <input type="number" name="closeValue" id="closeValue">
+                    <button type="submit">Adicionar Ação</button>
+                </form>
+            </main>
+        </div>
+
+        <div class="modal" id="editTicker" onclick="fecharModal('#editTicker',event)">
+            <main>
+                <header>
+                    <h1>Editar Ação</h1>
+                    <button id="xbtn" onclick="fecharModal('#editTicker')">X</button>
+                </header>
+                <form class="formAddAcao" onsubmit="editTicker(event)">
+                    <label for="eUrlLogo">URL: Logo</label>
+                    <input type="text" name="eUrlLogo" id="eUrlLogo">
+                    <label for="eNameCompany">Nome da empresa:</label>
+                    <input type="text" name="eNameCompany" id="eNameCompany">
+                    <label for="eTicker">Símbolo</label>
+                    <input type="text" name="eTicker" id="eTicker">
+                    <label for="eQuantity">Quantidade</label>
+                    <input type="number" name="eQuantity" id="eQuantity">
+                    <label for="eCloseValue">Valor da Ação: </label>
+                    <input type="number" name="eCloseValue" id="eCloseValue">
                     <button type="submit">Adicionar Ação</button>
                 </form>
             </main>
